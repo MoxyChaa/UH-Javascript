@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jenis Seragam Murid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ECE3CE;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #3A4D39;
+            color: #fff;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        select {
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #hasilSeragam {
+            font-size: 18px;
+            margin: 20px;
+            color: #3A4D39;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jenis Seragam Murid SMK Telkom Purwokerto</h1>
+    <p>Pilih hari: 
+        <select id="hari">
+            <option value="senin">Senin</option>
+            <option value="selasa">Selasa</option>
+            <option value="rabu">Rabu</option>
+            <option value="kamis">Kamis</option>
+            <option value="jumat">Jumat</option>
+        </select>
+    </p>
+    <p id="hasilSeragam"></p>
+
+    <script>
+        const hariSelect = document.getElementById('hari');
+        const hasilSeragam = document.getElementById('hasilSeragam');
+
+        hariSelect.addEventListener('change', function() {
+            const hari = hariSelect.value;
+            let seragam = '';
+
+            switch (hari) {
+                case 'senin':
+                    seragam = 'Kemeja putih dan bawahan biru';
+                    break;
+                case 'selasa':
+                    seragam = 'Baju khusus warna abu-abu';
+                    break;
+                case 'rabu':
+                    seragam = 'Baju identitas batik TS';
+                    break;
+                case 'kamis':
+                    seragam = 'Baju OSIS';
+                    break;
+                case 'jumat':
+                    seragam = 'Seragam Pramuka';
+                    break;
+            }
+
+            hasilSeragam.textContent = `Pada hari ${hari}, seragam yang harus dipakai adalah: ${seragam}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jenis Smartphone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ECE3CE;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #inputBox {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #3A4D39;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 300px;
+        }
+
+        #cekButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3A4D39;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cekButton:hover {
+            background-color: #5fc859;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cek Jenis Smartphone</h1>
+    <input type="text" id="inputBox" placeholder="Masukkan spesifikasi...">
+    <button id="cekButton" onclick="cekJenis()">Cek</button>
+    <p id="output"></p>
+
+    <script>
+        function cekJenis() {
+            var inputBox = document.getElementById("inputBox");
+            var output = document.getElementById("output");
+            var inputText = inputBox.value.toLowerCase();
+            
+            if (inputText.includes("10mp")) {
+                output.innerHTML = "Jenis: Kamera";
+            } else if (inputText.includes("128gb")) {
+                output.innerHTML = "Jenis: Memori";
+            } else {
+                output.innerHTML = "Jenis: Tidak ditemukan";
+            }
+        }
+    </script>
+</body>
+</html>

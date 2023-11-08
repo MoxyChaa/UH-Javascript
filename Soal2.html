@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Luas Segitiga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ECE3CE;
+        }
+
+        h1 {
+            color: #4F6F52;
+            background-color: #3A4D39;
+            color: #fff;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4F6F52;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #76db80;
+        }
+
+        #hasilLuas {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4F6F52;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator Luas Segitiga</h1>
+    <p>Masukkan panjang alas dan tinggi segitiga:</p>
+    <label for="alas">Alas: </label>
+    <input type="number" id="alas" step="any"><br>
+    <label for="tinggi">Tinggi: </label>
+    <input type="number" id="tinggi" step="any"><br>
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <p>Luas Segitiga: <span id="hasilLuas"></span></p>
+
+    <script>
+        function hitungLuas() {
+            var alas = parseFloat(document.getElementById("alas").value);
+            var tinggi = parseFloat(document.getElementById("tinggi").value);
+            var luas = 0.5 * alas * tinggi;
+            document.getElementById("hasilLuas").textContent = luas;
+        }
+    </script>
+</body>
+</html>

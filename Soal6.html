@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suara Hewan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ECE3CE;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+    
+        h1 {
+            background-color: #3A4D39;
+            color: #fff;
+            padding: 20px;
+        }
+    
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3A4D39;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #6aa667;
+        }
+    
+        #suaraHewan {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Suara Hewan</h1>
+    <p>Masukkan nama hewan: 
+        <input type="text" id="namaHewan" placeholder="Kucing atau Anjing">
+        <button onclick="tampilkanSuara()">Tampilkan Suara</button>
+    </p>
+    <p id="suaraHewan"></p>
+
+    <script>
+        function tampilkanSuara() {
+            const namaHewanInput = document.getElementById('namaHewan');
+            const suaraHewan = document.getElementById('suaraHewan');
+
+            const namaHewan = namaHewanInput.value.toLowerCase();
+
+            if (namaHewan === 'kucing') {
+                suaraHewan.textContent = 'Meong...';
+            } else if (namaHewan === 'anjing') {
+                suaraHewan.textContent = 'Guguk!';
+            } else {
+                suaraHewan.textContent = 'Hewan tidak dikenal atau suara tidak tersedia';
+            }
+        }
+    </script>
+</body>
+</html>

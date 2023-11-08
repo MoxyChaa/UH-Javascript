@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cek Tahun Kabisat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ECE3CE;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #3A4D39;
+            color: #fff;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3A4D39;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6bc267;
+        }
+
+        #hasilCek {
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cek Tahun Kabisat</h1>
+    <p>Masukkan tahun: 
+        <input type="number" id="tahunInput">
+        <button onclick="cekTahunKabisat()">Cek</button>
+    </p>
+    <p id="hasilCek"></p>
+
+    <script>
+        function cekTahunKabisat() {
+            const tahunInput = document.getElementById('tahunInput').value;
+            const hasilCek = document.getElementById('hasilCek');
+
+            if ((tahunInput % 4 === 0 && tahunInput % 100 !== 0) || tahunInput % 400 === 0) {
+                hasilCek.textContent = `${tahunInput} adalah tahun kabisat.`;
+            } else {
+                hasilCek.textContent = `${tahunInput} bukan tahun kabisat.`;
+            }
+        }
+    </script>
+</body>
+</html>

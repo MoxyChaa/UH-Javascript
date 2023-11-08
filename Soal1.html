@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ECE3CE;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            background-color: #ECE3CE;
+            color: #3A4D39;
+            padding: 20px;
+            margin: 0;
+        }
+
+        label {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        input {
+            width: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #3A4D39;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3A4D39;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #1e87c9;
+        }
+
+        #pesan {
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nilai Harian</h1>
+
+    <label for="nilai">Masukkan nilai Anda: </label>
+    <input type="number" id="nilai">
+    <button onclick="InputNilai()">Input Nilai</button>
+
+    <p id="pesan"></p>
+
+    <script>
+    function InputNilai() {
+        var nilai = parseInt(document.getElementById("nilai").value);
+
+        var pesan = "";
+        if (nilai > 80) {
+            pesan = "SANGAT MEMUASKAN";
+        } else if (nilai >= 60 && nilai <= 80) {
+            pesan = "MEMUASKAN";
+        } else {
+            pesan = "JANGAN MENYERAH, COBA LAGI!";
+        }
+        document.getElementById("pesan").innerHTML = pesan;
+    }
+    </script>
+</body>
+</html>
